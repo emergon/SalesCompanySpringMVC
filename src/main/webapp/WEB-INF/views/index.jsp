@@ -14,6 +14,9 @@
     <body>
         <h1>Welcome to our application!</h1>
         <p>
+            Logged in as : ${user.username} | <a href="logout">Logout</a>
+        </p>
+        <p>
             <a href="customer/list">Customers</a>
         </p>
     </body>
