@@ -19,5 +19,8 @@
         <p>
             <a href="customer/list">Customers</a>
         </p>
+        <p>
+            <a href="book/list">Books</a>
+        </p>
     </body>
 </html>
