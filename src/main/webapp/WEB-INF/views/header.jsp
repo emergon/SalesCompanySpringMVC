@@ -18,7 +18,7 @@
         |
         <a href="${pageContext.request.contextPath}/customer/list">Customers</a>
         |
-        <a href="#">Salesmen</a>
+        <a href="${pageContext.request.contextPath}/salesman/list">Salesmen</a>
         |
         <a href="#">Sales</a>
         |
