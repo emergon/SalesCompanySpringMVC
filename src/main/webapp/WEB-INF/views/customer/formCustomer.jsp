@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>New Customer</title>
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
-        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/static/css/add-customer-style.css">
+        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/static/css/add-style.css">
         
     </head>
     <body>

@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>New Customer</title>
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
-        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/static/css/add-customer-style.css">
+        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/static/css/add-style.css">
         
     </head>
     <body>
@@ -16,23 +16,30 @@
         </div>
         <div id="wrapper">
             <div id="header">
-                <h3>Customers</h3>
+                <h3>Products</h3>
             </div>
         </div>
         <div id="container">
             <div id="content">
                 <h4>Add New Customer</h4>
-                <form:form action="${pageContext.request.getContextPath()}/customer/create" modelAttribute="customer" method="post">
+                <form:form action="${pageContext.request.getContextPath()}/product/create" modelAttribute="product" method="post">
                     <table>
                         <tbody>
-                            <form:hidden path="ccode"/>
+                            <form:hidden path="pcode"/>
                             <tr>
-                                <td><label>Name:</label></td>
+                                <td><label>Description:</label></td>
                                 <%--path: getter is called on load, setter is called on submit--%>
                                 <%--path attribute will be populated from modelAttribute--%>
                                 <td>
-                                    <form:input path="name"/>
-                                    <form:errors path="name" cssClass="error"/>
+                                    <form:input path="pdescr"/>
+                                    <form:errors path="pdescr" cssClass="error"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Price:</label></td>
+                                <td>
+                                    <form:input path="pprice"/>
+                                    <form:errors path="pprice" cssClass="error"/>
                                 </td>
                             </tr>
                             <tr>
@@ -43,7 +50,7 @@
                     </table>
                 </form:form>
             </div>
-            <a id="backLink" href="${pageContext.request.getContextPath()}/customer/list">Back to List</a>
+            <a id="backLink" href="${pageContext.request.getContextPath()}/product/list">Back to List</a>
         </div>
         <div id="bottom">
             <%@include file="../footer.jsp" %>

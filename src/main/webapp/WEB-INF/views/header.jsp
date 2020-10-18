@@ -14,7 +14,7 @@
             You are logged in as <b>${user.username}</b> | 
             <a href="${pageContext.request.contextPath}/logout">Logout</a>
         </p>
-        <a href="${pageContext.request.contextPath}/ListProductServlet">
+        <a href="${pageContext.request.contextPath}/product/list">
             Products
         </a>
         |
