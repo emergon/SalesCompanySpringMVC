@@ -52,22 +52,29 @@ public class CustomerController {
         return model;
     }
 
+    /**
+     * * check redirect-attributes
+     * https://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/redirect-attributes.html
+     * https://www.baeldung.com/spring-redirect-and-forward
+     * @param c Customer Object
+     * @param result BindingResult
+     * @param model
+     * @return 
+     */
     @PostMapping("/create")
     public ModelAndView addCustomer(
             @ModelAttribute("customer") @Valid Customer c,BindingResult result//BindingResult must be after Valid customer
             , ModelAndView model) {
-        //Customer cc = customerService.findById(100102);
-        //System.out.println("*******&&ccc="+cc);
-        System.out.println("c====="+c);
+        //System.out.println("c====="+c);
         System.out.println("result===="+result);
         if(result.hasErrors()){
             model.setViewName("customer/formCustomer");
             return model;
         }
         customerService.saveCustomer(c);
-        //model.setViewName("redirect:/customer/list");
-        //model.addObject("message", "Customer created successfully");
-        model.setViewName("forward:/customer/list");
+//        model.addObject("message", "Customer created successfully");//For some reason, it cannot be rendered in html
+        model.setViewName("redirect:/customer/list");
+//        model.setViewName("forward:/customer/list");
         return model;
     }
 
@@ -79,20 +86,19 @@ public class CustomerController {
     }
 
     @GetMapping("/delete")
-    public String deleteCustomer(@RequestParam("customerId") int id, Model model) {
+    public String deleteCustomer(@RequestParam("customerId") int id, ModelAndView model) {
         customerService.removeCustomer(id);
-        return "forward:/customer/list";
+//        model.setViewName("redirect:/customer/list");
+        return "redirect:/customer/list";
     }
 
     @GetMapping("/search")
     public String searchCustomers(@RequestParam("searchName") String searchName,
             Model theModel) {
         // search customers from the service
-        System.out.println("11111111111111111111111111111111");
         List<Customer> customers = customerService.searchCustomers(searchName);
         // add the customers to the model
         theModel.addAttribute("listOfCustomers", customers);
-
         return "customer/listCustomer";
     }
 
