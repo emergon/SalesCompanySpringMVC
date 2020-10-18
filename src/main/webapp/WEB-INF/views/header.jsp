@@ -14,20 +14,15 @@
             You are logged in as <b>${user.username}</b> | 
             <a href="${pageContext.request.contextPath}/logout">Logout</a>
         </p>
-        <a href="${pageContext.request.contextPath}/product/list">
-            Products
-        </a>
+        <a href="${pageContext.request.contextPath}/product/list">Products</a>
         |
-        <a href="${pageContext.request.contextPath}/customer/list">
-            Customers
-        </a>
+        <a href="${pageContext.request.contextPath}/customer/list">Customers</a>
         |
-        <a href="#">
-            Salesmen
-        </a>
+        <a href="#">Salesmen</a>
         |
-        <a href="#">
-            Sales
-        </a>
+        <a href="#">Sales</a>
+        |
+        <a href="${pageContext.request.contextPath}/book/list">Books</a>
+
     </c:if>
 </div>

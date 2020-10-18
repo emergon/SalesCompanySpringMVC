@@ -38,7 +38,7 @@
                             <tr>
                                 <td><label>Price:</label></td>
                                 <td>
-                                    <form:input path="pprice"/>
+                                    <form:input path="pprice" type="number" step="0.01"/>
                                     <form:errors path="pprice" cssClass="error"/>
                                 </td>
                             </tr>

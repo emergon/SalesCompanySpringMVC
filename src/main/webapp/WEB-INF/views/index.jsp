@@ -9,18 +9,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home Page</title>
+        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
     </head>
     <body>
-        <h1>Welcome to our application!</h1>
-        <p>
-            Logged in as : ${user.username} | <a href="logout">Logout</a>
-        </p>
-        <p>
-            <a href="customer/list">Customers</a>
-        </p>
-        <p>
-            <a href="book/list">Books</a>
-        </p>
+        <div id="top">
+            <%@include file="./header.jsp" %>
+        </div>
+        <div id="wrapper">
+            
+            <div id="header">
+                <h3>Welcome to our application!</h3>
+            </div>
+            
+        </div>
+        
+        
+        <div id="bottom">
+            <%@include file="./footer.jsp" %>
+        </div>
     </body>
 </html>
