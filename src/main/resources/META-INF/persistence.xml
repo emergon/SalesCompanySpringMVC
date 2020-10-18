@@ -14,15 +14,4 @@
       <property name="hibernate.format_sql" value="true"/>
     </properties>
   </persistence-unit>-->
-  <persistence-unit name="com.emergon_SalesCompanySpringMVC_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>com.emergon.entities.Book</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sales?serverTimezone=UTC"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="1234"/>
-    </properties>
-  </persistence-unit>
 </persistence>

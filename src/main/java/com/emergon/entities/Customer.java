@@ -2,25 +2,44 @@ package com.emergon.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name = "customer")
-public class Customer implements Serializable{
+public class Customer implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "ccode")
     private Integer ccode;
     @NotEmpty
     @Column(name = "cname")
     private String name;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+    private Set<Sales> sales;
+    @JoinColumn(name = "cust_deta_id", referencedColumnName = "id")
+    @OneToOne
+    private CustomerDetail detail;
 
     public Customer() {
+    }
+
+    public Customer(Integer ccode) {
+        this.ccode = ccode;
     }
 
     public Customer(Integer ccode, String name) {
@@ -46,6 +65,23 @@ public class Customer implements Serializable{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @XmlTransient
+    public Set<Sales> getSales() {
+        return sales;
+    }
+
+    public void setSales(Set<Sales> sales) {
+        this.sales = sales;
+    }
+
+    public CustomerDetail getDetail() {
+        return detail;
+    }
+
+    public void setDetail(CustomerDetail detail) {
+        this.detail = detail;
     }
 
     @Override
@@ -81,6 +117,5 @@ public class Customer implements Serializable{
     public String toString() {
         return "Customer{" + "ccode=" + ccode + ", name=" + name + '}';
     }
-    
-    
+
 }
