@@ -11,6 +11,9 @@
         
     </head>
     <body>
+        <div id="top">
+            <%@include file="../header.jsp" %>
+        </div>
         <div id="wrapper">
             <div id="header">
                 <h3>Customers</h3>
@@ -41,6 +44,9 @@
                 </form:form>
             </div>
             <a id="backLink" href="${pageContext.request.getContextPath()}/customer/list">Back to List</a>
+        </div>
+        <div id="bottom">
+            <%@include file="../footer.jsp" %>
         </div>
     </body>
 </html>

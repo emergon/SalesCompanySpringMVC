@@ -9,6 +9,9 @@
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
     </head>
     <body>
+        <div id="top">
+            <%@include file="../header.jsp" %>
+        </div>
         <div id="wrapper">
             <div id="header">
                 <h3>Customers</h3>
@@ -54,6 +57,9 @@
                     </c:forEach>
                 </table>
             </div>
+        </div>
+        <div id="bottom">
+            <%@include file="../footer.jsp" %>
         </div>
     </body>
 </html>
