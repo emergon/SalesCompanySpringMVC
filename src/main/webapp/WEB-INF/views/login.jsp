@@ -30,12 +30,14 @@
                         <td>Username:</td>
                         <td>
                             <form:input id="username" path="username" size="20"/>
+                            <form:errors path="username"/>
                         </td>
                     </tr>
                     <tr>
                         <td>Password:</td>
                         <td>
                             <form:input id="password" type="password" path="password" size="20"/>
+                            <form:errors path="password"/>
                         </td>
                     </tr>
                     <tr>
